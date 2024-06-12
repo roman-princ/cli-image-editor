@@ -1,45 +1,47 @@
-# Grafický CLI Editor
-Tento projekt je jednoduchý grafický editor ovládaný z příkazové řádky (CLI), který umožňuje provádět různé základní grafické operace na obrázcích.
-## Funkce
-Editor podporuje následující operace:
-- `--mirror`: Zrcadlí obrázek horizontálně.
-- `--lighten <0-100>`: Zesvětluje obrázek o zadané procento.
-- `--darken <0-100>`: Ztmavuje obrázek o zadané procento.
-- `--inverse`: Vytváří inverzní obraz (negativ).
-- `--bw`: Konvertuje obrázek do odstínů šedi.
-- `--sharpen`: Aplikuje na obrázek vyostřovací filtr.
-- `--blur`: Aplikuje na obrázek rozostřovací filtr.
-- `--ed`: Aplikuje Sobel–Feldmanův filtr pro detekci hran.
-- `--rc`: Aplikuje Robertsův křížový filtr.
-- `--rotate [90, 180, 270]`: Otočí obrázek o 90, 180 nebo 270 stupňů doprava.
+# 🖼️ Graphical CLI Editor
 
-## Instalace
-* Naklonujte si repozitář pomocí SSH nebo HTTPS protokolu
+This project is a simple graphical editor operated from the command line (CLI) that allows you to perform various basic graphical operations on images.
+
+## ✨ Features
+The editor supports the following operations:
+- `--mirror`: Mirrors the image horizontally.
+- `--lighten <0-100>`: Lightens the image by the specified percentage.
+- `--darken <0-100>`: Darkens the image by the specified percentage.
+- `--inverse`: Creates an inverse image (negative).
+- `--bw`: Converts the image to grayscale.
+- `--sharpen`: Applies a sharpening filter to the image.
+- `--blur`: Applies a blurring filter to the image.
+- `--ed`: Applies the Sobel–Feldman edge detection filter.
+- `--rc`: Applies the Roberts cross edge detection filter.
+- `--rotate [90, 180, 270]`: Rotates the image 90, 180, or 270 degrees to the right.
+
+## ⚙️ Installation
+* Clone the repository using SSH or HTTPS
     * SSH: `git@gitlab.fit.cvut.cz:BI-PYT/B232/princrom.git`
     * HTTPS: `https://gitlab.fit.cvut.cz/BI-PYT/B232/princrom.git`
-* Přesuňte se do adresáře projektu 
+* Navigate to the project directory
     * `cd editor`
-* Vytvořte a aktivujte virtuální prostředí
-    * `python3 -m venv venv `
+* Create and activate a virtual environment
+    * `python3 -m venv venv`
     * `source venv/bin/activate`
-* Nainstalujte závislosti
+* Install dependencies
     * `pip install -r requirements.txt`
 
-## Použití
-Spusťte program pomocí příkazové řádky s požadovanými parametry:  
-* `python main.py [OPERACE] INPUT_IMAGE_PATH OUTPUT_IMAGE_PATH`
+## 🚀 Usage
+Run the program from the command line with the desired parameters:
+* `python main.py [OPERATION] INPUT_IMAGE_PATH OUTPUT_IMAGE_PATH`
 
-### Příklady příkazů
+### 📝 Command Examples
 
-* Rotace obrázku o 90 stupňů doprava:
+* Rotate an image 90 degrees to the right:
     * `python main.py --rotate 90 input.jpg output.jpg`
-* Převod obrázku do odstínů šedi a jeho zesvětlení o 25 %:
+* Convert an image to grayscale and lighten it by 25%:
     * `python main.py --bw --lighten 25 input.jpg output.jpg`
-* Aplikace vyostřovacího filtru a následné ztmavení o 10 %:
+* Apply a sharpening filter and then darken the image by 10%:
     * `python main.py --sharpen --darken 10 input.jpg output.jpg`
 
-## Testování
-Pro spuštění testů použijte přikaz `pytest`.
+## ✅ Testing
+To run the tests, use the command `pytest`.
 
-## Autor
-Roman Princ, ČVUT-FIT, princrom@fit.cvut.cz
+## 👤 Author
+Roman Princ, CTU-FIT, princrom@fit.cvut.cz
