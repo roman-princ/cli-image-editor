@@ -6,13 +6,19 @@ import numpy as np
 
 def load_image(path):
     """Loads the image from path variable"""
-    image = Image.open(path)
-    return np.array(image)
+    try:
+        image = Image.open(path)
+        return np.array(image)
+    except FileNotFoundError as ex:
+        raise FileNotFoundError("Image not found") from ex
 
 def save_image(image_array, path):
     """Saves the image into the path variable"""
-    image = Image.fromarray(image_array.astype(np.uint8))
-    image.save(path)
+    try:
+        image = Image.fromarray(image_array.astype(np.uint8))
+        image.save(path)
+    except FileNotFoundError as ex:
+        raise FileNotFoundError("Image not found") from ex
 
 def check_args(args):
     """Validates the arguments"""

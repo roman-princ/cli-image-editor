@@ -1,9 +1,6 @@
 """Main file of the project"""
-from cli import load_image, save_image, parse_arguments
-from operations.advanced import edge_detection, roberts_cross
-from operations.basic import sharpen_image, blur_image
-from operations.color import bw_image, lighten_image, darken_image, inverse_image
-from operations.transform import rotate_image, mirror_image
+from editor.cli import load_image, save_image, parse_arguments
+from editor.operations.facade import Operations
 
 def main():
     """Main function"""
@@ -12,16 +9,16 @@ def main():
         image_array = load_image(input_path)
 
         operation_map = {
-            '--rotate': rotate_image,
-            '--mirror': mirror_image,
-            '--inverse': inverse_image,
-            '--bw': bw_image,
-            '--lighten': lighten_image,
-            '--darken': darken_image,
-            '--sharpen': sharpen_image,
-            '--blur': blur_image,
-            '--ed': edge_detection,
-            '--rc': roberts_cross
+            '--rotate': Operations.rotate_image,
+            '--mirror': Operations.mirror_image,
+            '--inverse': Operations.inverse_image,
+            '--bw': Operations.bw_image,
+            '--lighten': Operations.lighten_image,
+            '--darken': Operations.darken_image,
+            '--sharpen': Operations.sharpen_image,
+            '--blur': Operations.blur_image,
+            '--ed': Operations.edge_detection,
+            '--rc': Operations.roberts_cross
         }
 
         for operation in operations:

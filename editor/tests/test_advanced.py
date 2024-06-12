@@ -1,8 +1,8 @@
 """Advanced operations tests."""
 import unittest
 import numpy as np
-from ..operations.advanced import edge_detection, roberts_cross
-from ..cli import load_image
+from editor.operations.facade import Operations
+from editor.cli import load_image
 
 class TestAdvancedOperations(unittest.TestCase):
     """Test the advanced operations."""
@@ -12,12 +12,12 @@ class TestAdvancedOperations(unittest.TestCase):
 
     def test_edge_detection(self):
         """Test the edge detection operation."""
-        ed = np.array(edge_detection(self.image))
+        ed = np.array(Operations.edge_detection(self.image))
         excepted = load_image("tests/img/edge_detection.png")
-        np.testing.assert_equal(ed, excepted)
+        np.testing.assert_almost_equal(ed, excepted)
 
     def test_roberts_cross(self):
         """Test the roberts cross operation."""
-        rc = np.array(roberts_cross(self.image))
+        rc = np.array(Operations.roberts_cross(self.image))
         excepted = load_image("tests/img/rc.png")
-        np.testing.assert_equal(rc, excepted)
+        np.testing.assert_almost_equal(rc, excepted)

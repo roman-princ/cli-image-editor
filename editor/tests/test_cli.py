@@ -1,7 +1,7 @@
 """Test file for CLI"""
 import unittest
 import sys
-from ..cli import parse_arguments
+from editor.cli import parse_arguments
 
 class TestCLI(unittest.TestCase):
     """Test the command line interface."""
